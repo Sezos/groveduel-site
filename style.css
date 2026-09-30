@@ -11,3 +11,11 @@ nav { font-size: .95rem; margin-bottom: 24px; }
 nav a { margin-right: 16px; }
 .lang { border-top: 2px solid #d9d2b6; margin-top: 40px; padding-top: 8px; }
 .small { font-size: .9rem; }
+.hero { display: flex; align-items: center; gap: 18px; margin-bottom: 8px; }
+.hero img { border-radius: 22px; box-shadow: 0 6px 18px rgba(22, 48, 42, .25); }
+.hero h1 { margin: 0; }
+.tagline { margin: 2px 0 0; font-weight: 600; color: var(--leaf); }
+.stores { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px; margin: 20px 0 24px; }
+.store { display: inline-block; background: var(--ink); color: var(--paper); text-decoration: none; font-weight: 600; padding: 10px 18px; border-radius: 10px; }
+.store:hover { background: var(--leaf); }
+.soon { font-size: .95rem; color: var(--muted); }
