@@ -10,10 +10,10 @@
 <main>
 <nav><a href="index.html">Grove Duel</a><a href="support.html">Support</a><a href="#mn">Монгол</a></nav>
 <h1>Privacy policy</h1>
-<p class="small">Effective 30 September 2026 · Grove Duel for iOS and Android · Developer: Badral Erdenebulgan</p>
+<p class="small">Effective 13 October 2026 · Grove Duel for iOS and Android · Developer: Badral Erdenebulgan</p>
 
 <h2>The short version</h2>
-<p>Grove Duel has no ads, no accounts, no purchases and no cross-app tracking. The developer does not receive or store any information about you. Online matches, with a friend or with another player through Quick match, use Unity's online services, which handle an anonymous player id, your connection details and an approximate location to link two phones.</p>
+<p>Grove Duel has no ads, no purchases and no cross-app tracking. Casual play (the campaign, matches against the AI, and online matches with a friend or through Quick match) needs no account, and the developer stores no information about you for it. Online matches use Unity's online services, which handle an anonymous player id, your connection details and an approximate location to link two phones, and from version 1.1.0 the developer's own game server, which sees your IP address only while you play online and keeps no record of it. Ranked play is optional and is the one part of the game with an account: if you sign in to it, the developer stores a ranked name, ratings and match history for that account, as described under "Ranked play" below.</p>
 
 <h2>Stored only on your device</h2>
 <ul>
@@ -27,35 +27,50 @@
 <h2>Online matches</h2>
 <p>You can play online with a friend (one of you creates a match and shares its code) or with another player through Quick match. Both use Unity Gaming Services (Authentication, Lobby and Relay), operated by Unity Technologies:</p>
 <ul>
-<li>The game signs in anonymously with a player id that belongs to this installation. It is created once, kept on your device and reused each time you play online, so a match you drop out of can let you back in. It is not linked to your name, email or phone number, and the developer cannot connect it to you. Deleting the game removes it; a new installation gets a new one.</li>
-<li>Quick match pairs you with another player of the same game version. Neither player sees a name or profile, and there is no chat: the other player only sees your guardian and what it does in the match.</li>
+<li>For casual play, the game signs in anonymously with a player id that belongs to this installation. It is created once, kept on your device and reused each time you play online, so a match you drop out of can let you back in. It is not linked to your name, email or phone number, and the developer cannot connect it to you. Deleting the game removes it; a new installation gets a new one. After you sign in to ranked play, online play on this installation uses that signed-in account instead of the anonymous id.</li>
+<li>Quick match pairs you with another player of the same game version. In casual play neither player sees a name or profile, and there is no chat: the other player only sees your guardian and what it does in the match.</li>
 <li>The match code, your device's IP address and network data are processed to connect and relay the match. Unity may derive an approximate location from the IP address (for example to pick a nearby server).</li>
 <li>Unity also collects technical data about the match and connection, such as match activity, performance and diagnostics, to run and improve the service.</li>
 </ul>
 <p>Unity processes this as a service provider under its own policy: <a href="https://unity.com/legal/game-player-and-app-user-privacy-policy">Unity Game Player and App User Privacy Policy</a>. Matches against the AI work offline and do not use these services.</p>
+<p>From version 1.1.0, online matches are played on the developer's game server in Ulaanbaatar, Mongolia, when it is available, and through Unity Relay as above when it is not. While you are connected, the server sees your device's IP address and the game's match messages, as any internet server does. It uses them only to run the match and keeps no record of them. Its log notes only that a match was played (when, which guardians, which side won and how long it took), with nothing that identifies you.</p>
+
+<h2>Ranked play</h2>
+<p>Ranked play is optional. You can play the whole game, including every online mode, without ever signing in to it. If you choose to play ranked, you sign in with Game Center on iPhone and iPad, or Google Play Games on Android. The game gives your sign-in to Unity Authentication, which links your Game Center, Apple or Google Play Games identity to a game account. The Sign in with Apple choice shares no email or name with the game.</p>
+<p>The developer's ranked service, a server in Ulaanbaatar, Mongolia, stores for that account:</p>
+<ul>
+<li>the account's Unity player id;</li>
+<li>the ranked name you choose (other ranked players can see it, for example on the leaderboards and when you are matched);</li>
+<li>your ratings and win and loss records;</li>
+<li>your ranked match history (when each match was played, who played in it, how it ended and how your rating changed);</li>
+<li>bans and the leaving record used to enforce them.</li>
+</ul>
+<p>It does not store your Game Center, Apple or Google email address or name, and it does not store IP addresses: the ranked service and the game server keep no addresses, and the web server in front of them keeps no access log.</p>
+<p>To remove this, open "Ranked account" in Settings and choose "Delete account". That removes the account, the name and the ratings, and makes your past matches anonymous: they stay in the history of the players you met, with no name or account attached. So that deleting an account cannot be used to clear a ban or reset a rating, a deleted account leaves behind one anonymous record: its bans, leaving record, ratings, win and loss counts and the date it was deleted, with no name and no platform id, filed under a salted one-way code of the Unity player id that cannot be turned back into it. The record is used only if the same platform account signs in to ranked again, in which case the ban and ratings come back with it. The server also keeps daily backups of this data for 14 days, so a deleted account can remain in a backup until it expires.</p>
+<p>Unity Technologies handles the sign-in itself under the Unity policy linked above, and Apple, Google and Game Center handle their own sign-in under their own policies.</p>
 
 <h2>Technical data</h2>
 <p>The game is built with the Unity engine, which may send limited technical information (such as device model, operating system version, graphics hardware and, if the engine fails, diagnostic information about the failure) to Unity under the policy linked above. The developer does not use this to identify you. If you share crash reports with developers in your phone's settings, Apple or Google may also pass anonymous crash reports to the developer.</p>
 <p>Versions after 1.0.0 ask this website (hosted on GitHub Pages) once when the game starts for the newest version number, so the game can tell you when an update is out. The request carries no identifier, only what any web request from an app carries: your IP address and standard technical headers (such as the app and operating system versions). The developer does not see or keep it. GitHub handles such requests under the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub Privacy Statement</a>.</p>
 
 <h2>What the game never collects</h2>
-<p>Your name, email, phone number, contacts, photos, precise (GPS) location, payment details, or activity in other apps. The game does not show ads and does not track you across apps or websites.</p>
+<p>Your email address, phone number, contacts, photos, precise (GPS) location, payment details, or activity in other apps. The game never reads your Game Center, Apple or Google email or name, and the only name it stores is the ranked name you choose yourself. The game does not show ads and does not track you across apps or websites.</p>
 
 <h2>Children</h2>
 <p>Grove Duel is not directed at children under 13 and does not knowingly collect personal information from them.</p>
 
 <h2>Your choices and questions</h2>
-<p>You can play entirely offline against the AI. The developer holds no data about you, and the anonymous id cannot be linked to a person, so there is nothing the developer can look up or delete; deleting the game removes everything it stored on your device. For data Unity holds, use the request options in Unity's privacy policy linked above. For questions, see the <a href="support.html">support page</a>.</p>
+<p>You can play entirely offline against the AI. If you never use ranked play, the developer holds no data about you, and the anonymous online id cannot be linked to a person, so there is nothing the developer can look up or delete; deleting the game removes everything it stored on your device. If you use ranked play, the developer holds the account data described above, and you can delete it yourself with "Delete account" under "Ranked account" in Settings; deleting the game does not delete a ranked account. For data Unity holds, use the request options in Unity's privacy policy linked above. For questions, see the <a href="support.html">support page</a>.</p>
 
 <h2>Changes</h2>
 <p>If this policy changes, the new version will be posted on this page with a new effective date.</p>
 
 <section class="lang" id="mn" lang="mn">
 <h1>Нууцлалын бодлого</h1>
-<p class="small">2026 оны 9-р сарын 30-наас хүчинтэй · Grove Duel (iOS, Android) · Хөгжүүлэгч: Badral Erdenebulgan</p>
+<p class="small">2026 оны 10-р сарын 13-наас хүчинтэй · Grove Duel (iOS, Android) · Хөгжүүлэгч: Badral Erdenebulgan</p>
 
 <h2>Товчхондоо</h2>
-<p>Grove Duel-д зар сурталчилгаа, бүртгэл, худалдан авалт, бусад апп дахь хяналт байхгүй. Хөгжүүлэгч таны тухай ямар ч мэдээлэл хүлээн авдаггүй, хадгалдаггүй. Найзтайгаа эсвэл Шуурхай тулаанаар өөр тоглогчтой онлайн тоглох үед хоёр утсыг холбохын тулд Unity-ийн онлайн үйлчилгээ нэргүй тоглогчийн дугаар, холболтын мэдээлэл, ойролцоо байршлыг ашигладаг.</p>
+<p>Grove Duel-д зар сурталчилгаа, худалдан авалт, бусад апп дахь хяналт байхгүй. Энгийн тоглолт (аян дайн, AI-тай тулаан, найзтайгаа эсвэл Шуурхай тулаанаар хийх онлайн тулаан) бүртгэл шаарддаггүй бөгөөд хөгжүүлэгч үүний төлөө таны тухай мэдээлэл хадгалдаггүй. Онлайн тулаанд хоёр утсыг холбохын тулд Unity-ийн онлайн үйлчилгээ нэргүй тоглогчийн дугаар, холболтын мэдээлэл, ойролцоо байршлыг ашигладаг. 1.1.0 хувилбараас эхлэн хөгжүүлэгчийн өөрийн тоглоомын сервер ч ашиглагдах бөгөөд тэр нь таныг онлайн тоглож байх үед л IP хаягийг тань хардаг, түүнийг хадгалдаггүй. Зэрэглэлийн тоглолт нь сонголттой бөгөөд тоглоомын цорын ганц бүртгэлтэй хэсэг: хэрэв та түүнд нэвтэрвэл хөгжүүлэгч тэр бүртгэлд зориулж зэрэглэлийн нэр, оноо, тулааны түүхийг хадгална. Дэлгэрэнгүйг доорх "Зэрэглэлийн тоглолт" хэсгээс үзнэ үү.</p>
 
 <h2>Зөвхөн таны төхөөрөмж дээр хадгалагдах зүйлс</h2>
 <ul>
@@ -69,25 +84,40 @@
 <h2>Онлайн тулаан</h2>
 <p>Та найзтайгаа (нэг нь тулаан үүсгэж кодоо хуваалцана) эсвэл Шуурхай тулаанаар өөр тоглогчтой онлайн тоглож болно. Хоёулаа Unity Technologies-ийн Unity Gaming Services (Authentication, Lobby, Relay) үйлчилгээг ашигладаг:</p>
 <ul>
-<li>Тоглоом энэ суулгацад хамаарах тоглогчийн дугаараар нэргүйгээр нэвтэрнэ. Энэ дугаар нэг удаа үүсч, таны төхөөрөмж дээр хадгалагдан, онлайн тоглох бүрт дахин ашиглагддаг тул тасарсан тулаандаа эргэн орох боломжтой. Энэ нь таны нэр, имэйл, утасны дугаартай холбогддоггүй бөгөөд хөгжүүлэгч үүнийг тантай холбож чадахгүй. Тоглоомыг устгахад энэ дугаар устах ба шинээр суулгахад шинэ дугаар үүснэ.</li>
-<li>Шуурхай тулаан таныг тоглоомын ижил хувилбартай өөр тоглогчтой холбоно. Аль аль нь нэр, профайл хардаггүй, чат байхгүй: нөгөө тоглогч зөвхөн таны хамгаалагч болон түүний тулаан дахь үйлдлийг л харна.</li>
+<li>Энгийн тоглолтод тоглоом энэ суулгацад хамаарах тоглогчийн дугаараар нэргүйгээр нэвтэрнэ. Энэ дугаар нэг удаа үүсч, таны төхөөрөмж дээр хадгалагдан, онлайн тоглох бүрт дахин ашиглагддаг тул тасарсан тулаандаа эргэн орох боломжтой. Энэ нь таны нэр, имэйл, утасны дугаартай холбогддоггүй бөгөөд хөгжүүлэгч үүнийг тантай холбож чадахгүй. Тоглоомыг устгахад энэ дугаар устах ба шинээр суулгахад шинэ дугаар үүснэ. Зэрэглэлийн тоглолтод нэвтэрсний дараа энэ суулгац дээрх онлайн тоглолт нэргүй дугаарын оронд тэр нэвтэрсэн бүртгэлийг ашиглана.</li>
+<li>Шуурхай тулаан таныг тоглоомын ижил хувилбартай өөр тоглогчтой холбоно. Энгийн тоглолтод аль аль нь нэр, профайл хардаггүй, чат байхгүй: нөгөө тоглогч зөвхөн таны хамгаалагч болон түүний тулаан дахь үйлдлийг л харна.</li>
 <li>Тулааны код, таны төхөөрөмжийн IP хаяг болон сүлжээний мэдээллийг тулааныг холбож дамжуулахад ашиглана. Unity IP хаягаас ойролцоо байршлыг тодорхойлж болно (жишээ нь ойр серверийг сонгоход).</li>
 <li>Unity мөн үйлчилгээгээ ажиллуулах, сайжруулахын тулд тулаан болон холболтын техникийн мэдээлэл (тулааны үйлдэл, гүйцэтгэл, оношилгоо) цуглуулдаг.</li>
 </ul>
 <p>Unity үүнийг өөрийн бодлогын дагуу үйлчилгээ үзүүлэгчийн хувиар боловсруулдаг: <a href="https://unity.com/legal/game-player-and-app-user-privacy-policy">Unity Game Player and App User Privacy Policy</a>. AI-тай тоглох тулаан интернэтгүй ажилладаг бөгөөд эдгээр үйлчилгээг ашигладаггүй.</p>
+<p>1.1.0 хувилбараас эхлэн онлайн тулаан боломжтой үед хөгжүүлэгчийн Улаанбаатар дахь тоглоомын сервер дээр, боломжгүй үед дээрх Unity Relay-ээр явагдана. Таныг холбогдсон байх хугацаанд сервер интернэтийн аль ч сервер адил таны төхөөрөмжийн IP хаяг болон тоглоомын мессежийг хардаг. Түүнийг зөвхөн тулааныг явуулахад ашиглаж, ямар ч бүртгэл хадгалдаггүй. Серверийн бүртгэлд зөвхөн тулаан болсон тухай (хэзээ, ямар хамгаалагчид, аль тал хожсон, хэр удсан) тэмдэглэгдэх бөгөөд таныг таних мэдээлэл байхгүй.</p>
+
+<h2>Зэрэглэлийн тоглолт</h2>
+<p>Зэрэглэлийн тоглолт сонголттой. Та түүнд хэзээ ч нэвтрэхгүйгээр онлайн бүх горимыг оролцуулан бүх тоглоомыг тоглож болно. Хэрэв зэрэглэлийн тоглолтыг сонговол iPhone, iPad дээр Game Center-ээр, Android дээр Google Play Games-ээр нэвтэрнэ. Тоглоом таны нэвтрэлтийг Unity Authentication-д өгч, Unity таны Game Center, Apple эсвэл Google Play Games хаягийг тоглоомын бүртгэлтэй холбоно. "Apple-ээр нэвтрэх" сонголт тоглоомд имэйл, нэр хуваалцдаггүй.</p>
+<p>Хөгжүүлэгчийн зэрэглэлийн үйлчилгээ (Улаанбаатар дахь сервер) тухайн бүртгэлд зориулж дараахыг хадгална:</p>
+<ul>
+<li>бүртгэлийн Unity тоглогчийн дугаар;</li>
+<li>таны сонгосон зэрэглэлийн нэр (бусад зэрэглэлийн тоглогчид үүнийг харж болно, жишээ нь тэргүүлэгчдийн жагсаалт дээр болон таныг тулаанд холбох үед);</li>
+<li>таны оноо, ялалт ба ялагдлын тоо;</li>
+<li>зэрэглэлийн тулааны түүх (тулаан хэзээ болсон, хэн тоглосон, хэрхэн дууссан, оноо хэрхэн өөрчлөгдсөн);</li>
+<li>хориг болон түүнийг мөрдөхөд ашигладаг тулаанаас гарсан тэмдэглэл.</li>
+</ul>
+<p>Таны Game Center, Apple, Google-ийн имэйл хаяг, нэрийг хадгалдаггүй, мөн IP хаягийг хадгалдаггүй: зэрэглэлийн үйлчилгээ болон тоглоомын сервер хаяг хадгалдаггүй, тэдгээрийн өмнөх вэб сервер хандалтын бүртгэл хөтөлдөггүй.</p>
+<p>Үүнийг устгахын тулд Тохиргооны "Зэрэглэлийн бүртгэл" хэсэгт "Бүртгэл устгах"-ыг сонгоно. Ингэснээр бүртгэл, нэр, оноо устаж, өмнөх тулаанууд нэргүй болно: тэдгээр нь таны таарсан тоглогчдын түүхэнд нэр, бүртгэлгүйгээр үлдэнэ. Бүртгэл устгаад хориг, оноогээ арилгаж болохгүйн тулд устсан бүртгэлээс нэг нэргүй тэмдэглэл үлдэнэ: хориг, тулаанаас гарсан тэмдэглэл, оноо, ялалт ба ялагдлын тоо, мөн устгасан огноо. Үүнд нэр, платформын дугаар байхгүй бөгөөд Unity тоглогчийн дугаарын давстай нэг талын кодоор (буцааж задлах боломжгүй) хадгалагдана. Энэ тэмдэглэлийг зөвхөн тэр платформын бүртгэл зэрэглэлийн тоглолтод дахин нэвтэрсэн тохиолдолд ашиглах бөгөөд тэр үед хориг, оноо нь буцаж ирнэ. Мөн сервер эдгээр мэдээллийн өдөр тутмын нөөц хуулбарыг 14 хоног хадгалдаг тул устгасан бүртгэл нөөц хуулбарт хугацаа дуустал үлдэж болно.</p>
+<p>Нэвтрэлтийг Unity Technologies дээрх Unity-ийн бодлогын дагуу, Apple, Google, Game Center нь өөрсдийн бодлогын дагуу өөрсдөө боловсруулна.</p>
 
 <h2>Техникийн мэдээлэл</h2>
 <p>Тоглоом Unity хөдөлгүүр дээр бүтээгдсэн бөгөөд Unity нь дээрх бодлогын дагуу хязгаарлагдмал техникийн мэдээлэл (төхөөрөмжийн загвар, үйлдлийн системийн хувилбар, график төхөөрөмж, мөн хөдөлгүүр доголдвол тухайн доголдлын оношилгооны мэдээлэл) илгээж болно. Хөгжүүлэгч үүнийг таныг таних зорилгоор ашигладаггүй. Хэрэв та утасныхаа тохиргоонд хөгжүүлэгчидтэй алдааны тайлан хуваалцахыг зөвшөөрсөн бол Apple эсвэл Google нэргүй алдааны тайланг хөгжүүлэгчид дамжуулж болно.</p>
 <p>1.0.0-оос хойших хувилбарууд шинэчлэл гарсан эсэхийг танд мэдэгдэхийн тулд тоглоом эхлэх үед энэ вэб сайтаас (GitHub Pages дээр байрладаг) хамгийн сүүлийн хувилбарын дугаарыг нэг удаа асуудаг. Энэ хүсэлтэд таныг таних дугаар байхгүй; зөвхөн аппаас илгээх аливаа вэб хүсэлтэд байдаг зүйлс буюу таны IP хаяг болон стандарт техникийн толгой мэдээлэл (апп болон үйлдлийн системийн хувилбар гэх мэт) дагалддаг. Хөгжүүлэгч үүнийг хардаггүй, хадгалдаггүй. GitHub ийм хүсэлтийг <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub-ийн нууцлалын мэдэгдлийн</a> дагуу боловсруулдаг.</p>
 
 <h2>Тоглоом хэзээ ч цуглуулдаггүй зүйлс</h2>
-<p>Таны нэр, имэйл, утасны дугаар, харилцагчид, зураг, нарийн (GPS) байршил, төлбөрийн мэдээлэл, бусад апп дахь үйл ажиллагаа. Тоглоом зар харуулдаггүй, таныг бусад апп болон вэбсайтаар дагаж хянадаггүй.</p>
+<p>Таны имэйл, утасны дугаар, харилцагчид, зураг, нарийн (GPS) байршил, төлбөрийн мэдээлэл, бусад апп дахь үйл ажиллагаа. Тоглоом таны Game Center, Apple, Google-ийн имэйл, нэрийг хэзээ ч уншдаггүй бөгөөд хадгалдаг цорын ганц нэр нь таны өөрийн сонгосон зэрэглэлийн нэр. Тоглоом зар харуулдаггүй, таныг бусад апп болон вэбсайтаар дагаж хянадаггүй.</p>
 
 <h2>Хүүхдүүд</h2>
 <p>Grove Duel нь 13-аас доош насны хүүхдэд чиглээгүй бөгөөд тэднээс хувийн мэдээлэл санаатайгаар цуглуулдаггүй.</p>
 
 <h2>Асуулт, хүсэлт</h2>
-<p>Та AI-тай бүрэн интернэтгүй тоглох боломжтой. Хөгжүүлэгч таны тухай ямар ч мэдээлэл хадгалдаггүй, нэргүй дугаар хүнтэй холбогддоггүй тул хөгжүүлэгчид хайж олох, устгах зүйл байхгүй; тоглоомыг устгахад таны төхөөрөмж дээр хадгалсан бүх зүйл устана. Unity-ийн хадгалдаг мэдээллийн талаар дээрх Unity-ийн нууцлалын бодлогод заасан хүсэлтийн аргыг ашиглана уу. Асуултын талаар <a href="support.html#mn">тусламжийн хуудсыг</a> үзнэ үү.</p>
+<p>Та AI-тай бүрэн интернэтгүй тоглох боломжтой. Хэрэв та зэрэглэлийн тоглолтыг огт ашигладаггүй бол хөгжүүлэгч таны тухай ямар ч мэдээлэл хадгалдаггүй, нэргүй онлайн дугаар хүнтэй холбогддоггүй тул хөгжүүлэгчид хайж олох, устгах зүйл байхгүй; тоглоомыг устгахад таны төхөөрөмж дээр хадгалсан бүх зүйл устана. Хэрэв зэрэглэлийн тоглолтыг ашигладаг бол хөгжүүлэгч дээр дурдсан бүртгэлийн мэдээллийг хадгална, та үүнийг Тохиргооны "Зэрэглэлийн бүртгэл" хэсгийн "Бүртгэл устгах"-аар өөрөө устгаж болно; тоглоомыг устгахад зэрэглэлийн бүртгэл устахгүй. Unity-ийн хадгалдаг мэдээллийн талаар дээрх Unity-ийн нууцлалын бодлогод заасан хүсэлтийн аргыг ашиглана уу. Асуултын талаар <a href="support.html#mn">тусламжийн хуудсыг</a> үзнэ үү.</p>
 
 <h2>Өөрчлөлт</h2>
 <p>Энэ бодлого өөрчлөгдвөл шинэ хувилбарыг энэ хуудсанд шинэ огноотойгоор нийтэлнэ.</p>
