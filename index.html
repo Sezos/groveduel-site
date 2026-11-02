@@ -1,31 +1,261 @@
 <!doctype html>
-<html lang="en">
+<html lang="mn">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Grove Duel: a lane duel of guardians</title>
-<meta name="description" content="A 5-minute 1v1 lane duel of plant guardians. Play the AI, a friend or a stranger online. Free, no ads, in English and Mongolian.">
-<meta property="og:title" content="Grove Duel: a lane duel of guardians">
-<meta property="og:description" content="5-minute 1v1 duels of plant guardians. Play the AI, a friend or a stranger online. Free, no ads. Монгол хэл дээр.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Grove Duel: утсанд зориулсан 5 минутын MOBA</title>
+<meta name="description" content="Дөрвөн хамгаалагч, нэг зам, 5–8 минутын тулаан. Монголд бүтээсэн, бүрэн монгол хэлтэй, Улаанбаатарын сервертэй үнэгүй MOBA. iPhone, iPad, Android.">
+<meta name="theme-color" content="#0c1b0b">
+<link rel="canonical" href="https://groveduel.badral.dev/">
+<link rel="alternate" hreflang="mn" href="https://groveduel.badral.dev/">
+<link rel="alternate" hreflang="en" href="https://groveduel.badral.dev/en.html">
+<link rel="alternate" hreflang="x-default" href="https://groveduel.badral.dev/">
+<meta property="og:title" content="Grove Duel: утсанд зориулсан 5 минутын MOBA">
+<meta property="og:description" content="Дөрвөн хамгаалагч, нэг зам. Монголд бүтээсэн, монгол хэлтэй, үнэгүй. iPhone, iPad, Android.">
 <meta property="og:image" content="https://groveduel.badral.dev/share.png">
 <meta property="og:url" content="https://groveduel.badral.dev/">
 <meta property="og:type" content="website">
-<meta name="twitter:card" content="summary">
+<meta property="og:locale" content="mn_MN">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="icon.png">
-<link rel="stylesheet" href="style.css">
+<link rel="apple-touch-icon" href="icon.png">
+<link rel="preload" href="fonts/Rubik-ExtraBold.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" as="image" href="img/hero-tall-1080.webp" media="(max-width: 760px)">
+<link rel="preload" as="image" href="img/hero-wide-1400.webp" imagesrcset="img/hero-wide-1400.webp 1400w, img/hero-wide-2400.webp 2400w" imagesizes="100vw" media="(min-width: 761px)">
+<link rel="stylesheet" href="home.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"Grove Duel","url":"https://groveduel.badral.dev/","image":"https://groveduel.badral.dev/share.png","inLanguage":["mn","en"],"genre":"MOBA","gamePlatform":["iOS","Android"],"operatingSystem":"iOS, Android","applicationCategory":"Game","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Person","name":"Badral"}}</script>
 </head>
 <body>
-<main>
-<header class="hero"><img src="icon.png" width="96" height="96" alt="Grove Duel icon: Seedling holding a glowing seed"><div><h1>Grove Duel</h1><p class="tagline">A lane duel of guardians</p></div></header>
-<p>A short lane duel of plant guardians for iPhone, iPad and Android. Pick Seedling, Bramble, Sporecap or Snapjaw and play against the AI, a friend, or another player through Quick match. Free, no ads, no purchases.</p>
-<p class="stores"><a class="store" href="https://play.google.com/store/apps/details?id=mn.badral.groveduel">Get it on Google Play</a><a class="store" href="https://apps.apple.com/app/grove-duel/id6814047617">Download on the App Store</a></p>
-<nav><a href="privacy.html">Privacy policy</a><a href="support.html">Support</a></nav>
-<section class="lang" lang="mn">
-<h2>Монгол</h2>
-<p>Ургамал хамгаалагчдын богино замын тулаан. iPhone, iPad, Android дээр Seedling, Bramble, Sporecap эсвэл Snapjaw-ыг сонгоод AI, найз эсвэл Шуурхай тулаанаар өөр тоглогчтой тоглоорой. Үнэгүй, зар сурталчилгаагүй.</p>
-<p class="stores"><a class="store" href="https://play.google.com/store/apps/details?id=mn.badral.groveduel&amp;hl=mn">Google Play-ээс татах</a><a class="store" href="https://apps.apple.com/app/grove-duel/id6814047617">App Store-оос татах</a></p>
-<nav><a href="privacy.html#mn">Нууцлалын бодлого</a><a href="support.html#mn">Тусламж</a></nav>
+<!--
+THESIS: Grove Duel's own key art is the first thing a visitor meets, full-bleed, with the offer and both store buttons inside the first screen; it refuses the category default of a centered logo over a blurred screenshot carousel.
+OWN-WORLD: deep forest ground (#0c1b0b to #24481b) owns the page; sun gold (#f6c94c, the game's Play button) is the only action color; leaf green marks roles; one sunlit cream band for ways to play. Rubik ExtraBold display, Onest body, line icons in one 1.8 stroke.
+STORY: see the guardians, understand a five-minute lane duel from a real annotated screenshot, pick a guardian and watch it move, learn the offline and online ways to play, meet the developer, download.
+FIRST VIEWPORT: key art fills the screen (wide on desktop, tall on phones); bottom-left: Grove Duel at up to 6rem, gold leaf rule, one-line offer, sub line, gold App Store and Google Play buttons, device line.
+FORM: user-pinned option A ("cinematic") from the 2 Nov brainstorm round; concept-seed not run because a pinned direction beats the roll; code-led (no image generation in use for this project).
+FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
+-->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-leaf" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5C4.5 11 10 5 20 4.5 19.5 14 13.5 19.5 5 19.5M4.5 19.5l8-8"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" d="M8 2.8h8a1.7 1.7 0 0 1 1.7 1.7v15a1.7 1.7 0 0 1-1.7 1.7H8a1.7 1.7 0 0 1-1.7-1.7v-15A1.7 1.7 0 0 1 8 2.8zM10.5 18h3"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round" d="M6.5 3.9v16.2a.8.8 0 0 0 1.2.7l13.2-8.1a.8.8 0 0 0 0-1.4L7.7 3.2a.8.8 0 0 0-1.2.7z"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M3.5 5.5c0-.8.7-1.5 1.5-1.5h5.5a1.5 1.5 0 0 1 1.5 1.5V20H5a1.5 1.5 0 0 1-1.5-1.5zM20.5 5.5c0-.8-.7-1.5-1.5-1.5h-5.5A1.5 1.5 0 0 0 12 5.5V20h7a1.5 1.5 0 0 0 1.5-1.5z"/></symbol>
+    <symbol id="i-swords" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M4 4h3.5l9 9M20 4h-3.5l-9 9M6 13.5l4.5 4.5M18 13.5 13.5 18M8.2 15.8 4.5 19.5M15.8 15.8l3.7 3.7"/></symbol>
+    <symbol id="i-flag" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M5.5 21V4M5.5 4.5h12l-2.5 4 2.5 4h-12"/></symbol>
+    <symbol id="i-resume" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><circle cx="12" cy="12" r="8.6"/><path d="M10.2 8.6v6.8l5.4-3.4z"/></g></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M10 14a4 4 0 0 0 5.7 0l3.1-3.1a4 4 0 0 0-5.7-5.7l-1.3 1.3M14 10a4 4 0 0 0-5.7 0l-3.1 3.1a4 4 0 0 0 5.7 5.7l1.3-1.3"/></symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M13.5 2.8 5 13.5h6.2l-1 7.7 8.6-11h-6.3z"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="9" cy="8" r="3.3"/><path d="M3 19.5c.5-3.4 2.9-5.5 6-5.5s5.5 2.1 6 5.5"/><circle cx="17" cy="9" r="2.6"/><path d="M16.2 14.1c2.7-.2 4.5 1.6 4.9 4.4"/></g></symbol>
+    <symbol id="i-trophy" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M8 4h8v4.5a4 4 0 0 1-8 0zM8 6H4.8a3.2 3.2 0 0 0 3.4 4.3M16 6h3.2a3.2 3.2 0 0 1-3.4 4.3M12 12.5v3.5M8.5 20h7M10 16h4v4h-4z"/></symbol>
+    <symbol id="i-offline" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M2.8 8.6a13.6 13.6 0 0 1 4-2.6M10.8 5.1A13.6 13.6 0 0 1 21.2 8.6M5.8 12a9 9 0 0 1 3-1.9M14.6 10.5A9 9 0 0 1 18.2 12M9.2 15.4a4.3 4.3 0 0 1 5.6 0M12 19.2h.01M3.5 3.5l17 17"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="8.8"/><path d="M3.2 12h17.6M12 3.2c2.4 2.5 3.6 5.4 3.6 8.8s-1.2 6.3-3.6 8.8c-2.4-2.5-3.6-5.4-3.6-8.8s1.2-6.3 3.6-8.8z"/></g></symbol>
+    <symbol id="i-video" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M3.5 6.5h11.5a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H3.5a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1zM16 10.5l5.5-3.2v9.4L16 13.5"/></symbol>
+    <symbol id="i-signal" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M5 19v-3M10 19v-6.5M15 19V9.5M20 19V5.5"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="8.6"/><path d="M12 7.5V12l3 2"/></g></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M4 6h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1zM3.5 7l8.5 6.2L20.5 7"/></symbol>
+  </defs>
+</svg>
+<a class="skip" href="#main">Үндсэн хэсэг рүү</a>
+
+<header class="hero">
+  <picture class="hero-art">
+    <source media="(max-width: 760px)" srcset="img/hero-tall-1080.webp">
+    <img src="img/hero-wide-1400.webp" srcset="img/hero-wide-1400.webp 1400w, img/hero-wide-2400.webp 2400w" sizes="100vw" width="2400" height="1029" fetchpriority="high" alt="Grove Duel-ийн дөрвөн хамгаалагч ойд: Seedling, Bramble, Sporecap, Snapjaw">
+  </picture>
+  <div class="top">
+    <div class="wrap">
+      <a class="brand" href="./"><img src="icon.png" alt="" width="36" height="36">Grove Duel</a>
+      <nav aria-label="Үндсэн цэс">
+        <a href="#guardians">Хамгаалагчид</a>
+        <a href="#modes">Тоглох арга</a>
+        <a href="#creators">Стримерүүдэд</a>
+        <a href="support.html#mn">Тусламж</a>
+        <a class="lang" href="en.html" hreflang="en" lang="en">EN</a>
+      </nav>
+    </div>
+  </div>
+  <div class="hero-copy wrap">
+    <h1>Grove Duel</h1>
+    <div class="mark" aria-hidden="true"><svg><use href="#i-leaf"/></svg><i></i></div>
+    <p class="lead">Дөрвөн хамгаалагч. Нэг зам. 5–8 минутын тулаан.</p>
+    <p class="sub">Утсанд зориулсан үнэгүй MOBA. Монголд бүтээсэн, бүрэн монгол хэлтэй.</p>
+    <div class="stores">
+      <a class="store" data-store="ios" href="https://apps.apple.com/app/grove-duel/id6814047617"><svg aria-hidden="true"><use href="#i-phone"/></svg><span><small>Татах</small><b>App Store</b></span></a>
+      <a class="store" data-store="play" href="https://play.google.com/store/apps/details?id=mn.badral.groveduel&amp;hl=mn"><svg aria-hidden="true"><use href="#i-play"/></svg><span><small>Татах</small><b>Google Play</b></span></a>
+    </div>
+    <p class="meta">iPhone, iPad, Android · Онлайн тулаан Улаанбаатарын серверт</p>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="match" aria-labelledby="match-h">
+  <div class="wrap">
+    <h2 id="match-h">Таван минутад бүтэн тулаан</h2>
+    <p class="intro">Цэргүүдтэйгээ хамт замаар довтолж, түвшнээ ахиулж, алтаа зарцуулаад дайсны зүрхийг унагана. Анхны тулаан чинь өөрөө алхам алхмаар заана.</p>
+    <figure class="shot">
+      <img src="img/match-mn.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Тоглоомын бодит зураг: Snapjaw замын голд Vine Hook-оо онилж байна, дээд талд Grove Heart, Blight Root-ын амь, баруун доод талд чадварын товчнууд.">
+      <span class="pin" style="left:10%;top:72%" aria-hidden="true">1</span>
+      <span class="pin" style="left:30%;top:36%" aria-hidden="true">2</span>
+      <span class="pin" style="left:26%;top:8%" aria-hidden="true">3</span>
+      <span class="pin" style="left:81.5%;top:20%" aria-hidden="true">4</span>
+    </figure>
+    <ol class="legend">
+      <li><strong>Хөдлөх</strong>Зүүн доод тойргоор алхана. Хажуу тийш алхвал дайсны цохилт онохгүй.</li>
+      <li><strong>Онилох</strong>Чадвар дээр дарвал ойрын дайсан руу, чирвэл гараараа онилно. Энд Snapjaw Vine Hook-оо онилж байна.</li>
+      <li><strong>Зорилго</strong>Grove Heart-аа хамгаалж, Blight Root-ыг унагавал ялна.</li>
+      <li><strong>Дэлгүүр</strong>Баазаасаа эд зүйл авч, зарж, илүү хүчтэй хувилбар болгоно.</li>
+    </ol>
+  </div>
 </section>
+
+<section class="guardians" id="guardians" aria-labelledby="guardians-h">
+  <div class="wrap">
+    <h2 id="guardians-h">Дөрвөн хамгаалагч</h2>
+    <p class="intro">Хамгаалагч бүр гурван чадвартай бөгөөд тоглох арга нь тэс өөр. Нэгийг нь сонгоод хөдөлгөөнийг нь үз.</p>
+    <div class="g-layout">
+      <div class="stage">
+        <figure class="on"><video muted loop playsinline preload="none" poster="img/seedling-720.webp" aria-label="Seedling хөдөлж байгаа нь"><source src="media/seedling.mp4" type="video/mp4"></video></figure>
+        <figure><video muted loop playsinline preload="none" poster="img/bramble-720.webp" aria-label="Bramble хөдөлж байгаа нь"><source src="media/bramble.mp4" type="video/mp4"></video></figure>
+        <figure><video muted loop playsinline preload="none" poster="img/sporecap-720.webp" aria-label="Sporecap хөдөлж байгаа нь"><source src="media/sporecap.mp4" type="video/mp4"></video></figure>
+        <figure><video muted loop playsinline preload="none" poster="img/snapjaw-720.webp" aria-label="Snapjaw хөдөлж байгаа нь"><source src="media/snapjaw.mp4" type="video/mp4"></video></figure>
+      </div>
+      <div class="g-side">
+        <div class="picker" role="tablist" aria-label="Хамгаалагч сонгох">
+          <button class="pick" role="tab" id="t-seedling" aria-controls="p-seedling" aria-selected="true"><span class="face" style="background-image:url(img/seedling-720.webp)"></span><b>Seedling</b></button>
+          <button class="pick" role="tab" id="t-bramble" aria-controls="p-bramble" aria-selected="false" tabindex="-1"><span class="face" style="background-image:url(img/bramble-720.webp)"></span><b>Bramble</b></button>
+          <button class="pick" role="tab" id="t-sporecap" aria-controls="p-sporecap" aria-selected="false" tabindex="-1"><span class="face" style="background-image:url(img/sporecap-720.webp)"></span><b>Sporecap</b></button>
+          <button class="pick" role="tab" id="t-snapjaw" aria-controls="p-snapjaw" aria-selected="false" tabindex="-1"><span class="face" style="background-image:url(img/snapjaw-720.webp)"></span><b>Snapjaw</b></button>
+        </div>
+        <div class="g-panels">
+          <div class="g-panel" role="tabpanel" id="p-seedling" aria-labelledby="t-seedling">
+            <h3>Seedling</h3>
+            <span class="role">Холоос тулалдана</span>
+            <p>Дайснаа ойртуулалгүй холоос буудаж, амь багасвал өөрийгөө эдгээнэ.</p>
+            <ul class="skills">
+              <li><b>Seed Shot</b>Үр буудаж, замд нь таарсан эхний дайсныг цохино.</li>
+              <li><b>Bloom</b>Чамайг эдгээж, эргэн тойрны дайснуудыг гэмтээнэ.</li>
+              <li><b>Dash</b>Нэг зүг рүү хурдан үсрэнэ. Зугтахад хэрэглэ.</li>
+            </ul>
+          </div>
+          <div class="g-panel" role="tabpanel" id="p-bramble" aria-labelledby="t-bramble" hidden>
+            <h3>Bramble</h3>
+            <span class="role">Ойроос тулалдана</span>
+            <p>Тулааны голд орж, цохилтыг биеэрээ даана.</p>
+            <ul class="skills">
+              <li><b>Thorn Lunge</b>Урагш шүүрч, замд таарсан эхний дайсныг цохино.</li>
+              <li><b>Bark Guard</b>Холтсоо хатууруулж, хэсэг зуур бага гэмтэл авна.</li>
+              <li><b>Bramble Quake</b>Газар цохиж, эргэн тойрны бүх дайсныг гэмтээнэ.</li>
+            </ul>
+          </div>
+          <div class="g-panel" role="tabpanel" id="p-sporecap" aria-labelledby="t-sporecap" hidden>
+            <h3>Sporecap</h3>
+            <span class="role">Тулааныг хянана</span>
+            <p>Дайснаа удаашруулж, газарт тогтоож, өөрөө холдоно.</p>
+            <ul class="skills">
+              <li><b>Spore Burst</b>Спор цацаж, хүрсэн дайснуудыг гэмтээж удаашруулна.</li>
+              <li><b>Tangle</b>Буудаж, онсон дайснаа гэмтээж хэсэг зуур газарт тогтооно.</li>
+              <li><b>Puff Step</b>Богино зайд холдож үсрэн, ардаа үлдсэн дайснуудыг удаашруулна.</li>
+            </ul>
+          </div>
+          <div class="g-panel" role="tabpanel" id="p-snapjaw" aria-labelledby="t-snapjaw" hidden>
+            <h3>Snapjaw</h3>
+            <span class="role">Барьж авна</span>
+            <p>Дайснаа ороонгоор татаж авчраад, хазаж тогтооно.</p>
+            <ul class="skills">
+              <li><b>Vine Hook</b>Ороонго шидэж, барьсан эхний дайснаа өөр лүүгээ татна.</li>
+              <li><b>Snap</b>Хүрэх зайн дайсныг хазаж, хэсэг зуур тогтооно.</li>
+              <li><b>Gulp</b>Дайсны цэргийг бүхлээр нь залгиж, чамайг эдгээнэ.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="modes" id="modes" aria-labelledby="modes-h">
+  <div class="wrap">
+    <h2 id="modes-h">Ганцаараа ч, найзтайгаа ч</h2>
+    <p class="intro">Интернэтгүй үед AI-тай, интернэттэй үед бусадтай. Зэрэглэлээс бусад бүх зүйл бүртгэлгүй ажиллана.</p>
+    <div class="cols">
+      <div>
+        <h3><svg aria-hidden="true"><use href="#i-offline"/></svg>Интернэтгүй</h3>
+        <ul class="ways">
+          <li><svg aria-hidden="true"><use href="#i-book"/></svg><b>Тоглож сурах</b><span>Анхны тулаан хөдлөх, довтлох, чадвар, дэлгүүрийг алхам алхмаар заана.</span></li>
+          <li><svg aria-hidden="true"><use href="#i-swords"/></svg><b>Хурдан тулаан</b><span>AI-тай Хялбар, Дунд, Хэцүү түвшинд.</span></li>
+          <li><svg aria-hidden="true"><use href="#i-flag"/></svg><b>Сорилтууд</b><span>Blight-ийн эсрэг таван тулаан. Нэгийг ялвал дараагийнх нь нээгдэнэ.</span></li>
+          <li><svg aria-hidden="true"><use href="#i-resume"/></svg><b>Дараа нь үргэлжлүүл</b><span>AI-тай тулаанаа орхиод, апп хаасан ч дараа нь үргэлжлүүлнэ.</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3><svg aria-hidden="true"><use href="#i-globe"/></svg>Онлайн</h3>
+        <ul class="ways">
+          <li><svg aria-hidden="true"><use href="#i-link"/></svg><b>Найзтайгаа кодоор</b><span>Тулаан үүсгээд кодоо найздаа өг.</span></li>
+          <li><svg aria-hidden="true"><use href="#i-bolt"/></svg><b>Шуурхай тулаан</b><span>Өөр тоглогчтой шууд тулна. Хүн байхгүй бол AI-тай дасгал тулаан эхэлнэ.</span></li>
+          <li><svg aria-hidden="true"><use href="#i-users"/></svg><b>2v2 өрөө</b><span>Тал бүрд хоёр тоглогч, зургаан газрын зураг. Хоосон суудлыг бот эзэлнэ.</span></li>
+          <li><svg aria-hidden="true"><use href="#i-trophy"/></svg><b>Зэрэглэл</b><span>Game Center эсвэл Google Play Games-ээр нэвтэрч 1v1, 2v2 тоглон Суулгацаас Эртний төгөл хүртэл ахина.</span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="note">Утас дуугарвал онлайн тулаан нэг минут хүлээнэ, тасарсан холболт өөрөө сэргэнэ.</p>
+  </div>
+</section>
+
+<section class="creators" id="creators" aria-labelledby="creators-h">
+  <div class="wrap c-grid">
+    <div>
+      <h2 id="creators-h">Стример, клубүүдэд</h2>
+      <p class="intro">Нэг тулаан 5–8 минут тул нэвтрүүлгийн завсарт ч багтана.</p>
+      <ul class="c-list">
+        <li><svg aria-hidden="true"><use href="#i-video"/></svg>Үзэгчээ кодоор урьж 1v1 тогло.</li>
+        <li><svg aria-hidden="true"><use href="#i-users"/></svg>2v2 өрөөнд найзуудаа цуглуул, хоосон суудлыг бот эзэлнэ.</li>
+        <li><svg aria-hidden="true"><use href="#i-signal"/></svg>Сервер Улаанбаатарт: Монголоос тоглоход 20–40 ms.</li>
+      </ul>
+      <a class="mail" href="mailto:info@badral.dev?subject=Grove%20Duel"><svg aria-hidden="true"><use href="#i-mail"/></svg>Хамтран ажиллах: info@badral.dev</a>
+    </div>
+    <blockquote class="maker">
+      <p>Сайн байна уу! Grove Duel-ийг би ганцаараа Улаанбаатарт хийж байна. 9-р сарын 15-нд эхэлж, 29-нд Google Play-д гаргасан.</p>
+      <p>Тоглоом үнэгүй. Хожим ямар нэг зүйл зарвал зөвхөн гоёл байна, хүч хэзээ ч худалдахгүй.</p>
+      <p>Санал, алдаагаа бичээрэй. Хурдан засна.</p>
+      <footer>Бадрал<span>Grove Duel-ийн хөгжүүлэгч</span></footer>
+    </blockquote>
+  </div>
+</section>
+
+<section class="close" aria-labelledby="close-h">
+  <div class="wrap">
+    <h2 id="close-h">Төгөлөө хамгаал</h2>
+    <p>Үнэгүй. iPhone, iPad, Android.</p>
+    <div class="stores">
+      <a class="store" data-store="ios" href="https://apps.apple.com/app/grove-duel/id6814047617"><svg aria-hidden="true"><use href="#i-phone"/></svg><span><small>Татах</small><b>App Store</b></span></a>
+      <a class="store" data-store="play" href="https://play.google.com/store/apps/details?id=mn.badral.groveduel&amp;hl=mn"><svg aria-hidden="true"><use href="#i-play"/></svg><span><small>Татах</small><b>Google Play</b></span></a>
+    </div>
+  </div>
+  <img src="img/grove-1800.webp" width="1800" height="772" loading="lazy" decoding="async" alt="">
+</section>
+
 </main>
+
+<footer class="foot">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="icon.png" alt="" width="36" height="36">Grove Duel</a>
+    <nav aria-label="Доод цэс">
+      <a href="support.html#mn">Тусламж</a>
+      <a href="privacy.html#mn">Нууцлалын бодлого</a>
+      <a href="mailto:info@badral.dev">info@badral.dev</a>
+      <a href="en.html" hreflang="en" lang="en">English</a>
+    </nav>
+    <span>© 2026 Бадрал</span>
+  </div>
+</footer>
+
+<div class="dock" aria-hidden="true">
+  <span class="brand"><img src="icon.png" alt="" width="32" height="32"><span>Grove Duel<small>Үнэгүй MOBA</small></span></span>
+  <a class="get" href="#close-h" tabindex="-1">Татах</a>
+</div>
+
+<script src="home.js" defer></script>
 </body>
 </html>
